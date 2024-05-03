@@ -6,6 +6,13 @@ pipeline {
 
         agent any
 
+        environment {
+        
+            DOCKER_REGISTRY = 'https://index.docker.io/v1/'
+            DOCKER_IMAGE = 'reshmastani382/abcimage'
+
+        }
+
         stages {
             stage('Checkout') {
                 steps {
