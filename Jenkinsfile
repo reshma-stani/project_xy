@@ -9,7 +9,7 @@ pipeline {
         environment {
         
             DOCKER_REGISTRY = 'https://index.docker.io/v1/'
-            DOCKER_IMAGE = 'reshmastani382/abcimage'
+            DOCKER_IMAGE = 'reshmastani382/xyzimage'
 
         }
 
