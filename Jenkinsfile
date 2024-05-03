@@ -1,11 +1,16 @@
 pipeline {
 
+        agent any
+
+        environment {
+        
+            DOCKER_REGISTRY = 'https://index.docker.io/v1/'
+            DOCKER_IMAGE = 'reshmastani382/xyzimage'
+
+        }
         tools {
             maven 'mymaven'
         }
-
-        agent any
-
         stages {
             stage('Checkout') {
                 steps {
@@ -41,7 +46,7 @@ pipeline {
             }
             stage('Push DockerImage') {
                 steps {
-                    withDockerRegistry(credentialsId: 'f80a6223-95e8-4a88-a9af-362d5c4a129c', url: DOCKER_REGISTRY) {
+                    withDockerRegistry(credentialsId: '5bf62ccb-3ee7-415b-9e5a-cbd3f5266763', url: DOCKER_REGISTRY) {
                         sh "docker push ${DOCKER_IMAGE}:latest"
                     }
                 }
